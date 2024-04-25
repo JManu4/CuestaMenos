@@ -11,24 +11,27 @@ body {
     background: linear-gradient(112.1deg, rgb(13, 16, 24) 11.4%, rgb(63, 76, 119) 70.2%);
     background-image: url(../img/bg2.jpeg);
     color: white;
+    position: relative;
 }
 header {
     font-family: "Pacifico", cursive;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 header p {
     font-family: "DM Sans", sans-serif;
     margin-top: 1rem;
 }
-
+main {
+    padding-bottom: 1rem;
+}
 
 
 .aComparar {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 1rem;
-    padding: 3rem;
+    padding: 1.5rem 3rem;
     max-width: 80%;
     margin-inline: auto;
     margin-top: 2rem;
@@ -166,17 +169,14 @@ input {
     } 
 }
 
-
-
-
 footer {
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 0);
-    margin-top: 2rem;
   }
 footer p {
     font-family: "DM Sans", sans-serif;
     font-size: small;
+    margin-bottom: 0;
  }
