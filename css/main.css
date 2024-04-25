@@ -9,25 +9,30 @@ font-family: "Pacifico", cursive; */
 }
 body {
     background: linear-gradient(112.1deg, rgb(13, 16, 24) 11.4%, rgb(63, 76, 119) 70.2%);
+    background-image: url(../img/bg2.jpeg);
     color: white;
 }
-.titulo {
+header {
     font-family: "Pacifico", cursive;
     text-align: center;
     margin-top: 4rem;
 }
-.titulo p {
+header p {
     font-family: "DM Sans", sans-serif;
     margin-top: 1rem;
 }
+
+
+
 .aComparar {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 1rem;
     padding: 3rem;
     max-width: 80%;
     margin-inline: auto;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
     box-shadow: 10px 10px 30px -5px black;
 }
 .formulario {
@@ -35,71 +40,111 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
+
+
+
+.inputData {
+    overflow: hidden;
+    position: relative;
+    padding-block: 0.75rem;
+    width: 100%;
+}
+.inputDataContent {
+    position: relative;
+    width: 100%;
+}
 input {
-    height: 4rem;
-    font-family: "DM Sans", sans-serif;
-} 
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid #5b618a;
+    color: #5b618a;
+    &:focus { 
+        font-weight: bold; 
+        font-family: "Montserrat", sans-serif;
+    }
+    &:focus ~ label, &:valid ~ label {
+        color: #9e8560;
+        transform: translateY(-30px);
+        font-size: 0.9rem;
+        /* font-weight: bold; */
+        cursor:default;
+    }
+    &::placeholder { color: transparent; }
+    &:not(:placeholder-shown):invalid ~ label {
+        color: yellow;
+        transform: translateY(-30px);
+        font-size: 0.9rem;
+        font-weight: bold;
+        &::after { content: " ( Invalid format! )";}
+    }
+    &:focus ~ .underline{ width: 100%; }
+}
+    label {
+        position: absolute;
+        left:0;
+        bottom: 0;
+        height: 2rem;
+        color: #5b618a;
+        cursor:text;
+        transition: all 0.2s ease-out;
+        
+    }
+    .underline {
+        content:'';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: all 0.2s ease-out;
+    }
+
+
 .botones {  
     display: flex;
     justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+
 }
 .compararBtn {
     padding: 1rem 2rem;
     color: white;
     font-size: 1.5rem;
-    font-family: "DM Sans", sans-serif;
-    background: rgba(189, 142, 25, 0.5);
-    border: 2px solid rgb(189, 143, 25);
+    background: #29a42d;
+    border: 2px solid #29a42d;
     border-radius: 0.5rem;
     /* offset-x | offset-y | blur-radius | spread-radius | color */    
-    box-shadow: 10px 10px 4px -5px black;
+    box-shadow: 10px 10px 4px -5px rgb(111, 111, 111);
     letter-spacing: 4px;
 }
-.compararBtn:hover {
-    animation: botonIluminacion 0.5s forwards;
-}
+.compararBtn:hover { animation: botonIluminacion 0.5s forwards }
 @keyframes botonIluminacion {
     0% { }
     100% { 
-        box-shadow: -10px 10px 4px -5px white;
-        transform: translateY(-0.25rem);
-        background: rgba(189, 142, 25);
+        box-shadow: 10px 10px 4px -5px black;
     }
 }
 .borrarBtn {
     padding: 1rem 2rem;
     color: white;
     font-size: 1.5rem;
-    font-family: "DM Sans", sans-serif;
-    background: rgba(0, 0, 0, 0.5);
+    background: #190f0c;
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
-    box-shadow: 10px 10px 4px -5px black;
+    box-shadow: 10px 10px 4px -5px rgb(111, 111, 111);
     letter-spacing: 4px;
 }
-.borrarBtn:hover {
-    animation: botonBorrarIluminacion 0.5s forwards;
-}
+.borrarBtn:hover { animation: botonBorrarIluminacion 0.5s forwards }
 @keyframes botonBorrarIluminacion {
     0% { }
     100% { 
-        box-shadow: -10px 10px 4px -5px white;
-        transform: translateY(-0.25rem);
-        background: black;
+        box-shadow: 10px 10px 4px -5px red;
+        color: red;
     }
 }
-/* .resultado {
-    max-width: 80%;
-    margin-inline: auto;
-    margin-top: 3rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    padding: 3rem;
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.5rem;
-    box-shadow: 10px 10px 30px -5px black;
-} */
-
 
 
 @media (max-width: 600px){
@@ -109,7 +154,7 @@ input {
     }
     .compararBtn, .borrarBtn {
         letter-spacing: normal;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .input-group-text{
         font-size: 0.8rem;
@@ -120,3 +165,18 @@ input {
         font-family: "DM Sans", sans-serif;
     } 
 }
+
+
+
+
+footer {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    margin-top: 2rem;
+  }
+footer p {
+    font-family: "DM Sans", sans-serif;
+    font-size: small;
+ }
