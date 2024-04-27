@@ -41,7 +41,7 @@ main {
 .formulario {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 
@@ -104,6 +104,11 @@ input {
         background: white;
         transition: all 0.2s ease-out;
     }
+
+
+.vs {
+    color: #5b618a
+}
 
 
 .botones {  
@@ -172,7 +177,7 @@ input {
 footer {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 8px;
     transform: translate(-50%, 0);
   }
 footer p {
