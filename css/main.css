@@ -92,7 +92,7 @@ input {
         color: #5b618a;
         cursor:text;
         transition: all 0.2s ease-out;
-        
+        font-family: "Montserrat", sans-serif;        
     }
     .underline {
         content:'';
@@ -153,8 +153,6 @@ input {
         color: red;
     }
 }
-
-
 @media (max-width: 600px){
     .botones {
         flex-direction: column;
